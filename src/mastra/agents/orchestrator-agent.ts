@@ -6,13 +6,14 @@ import {
     consultDietitianTool,
     consultNeurologistTool,
     consultCardiologistTool,
-    consultFitnessTool
+    consultFitnessTool,
+    consultPediatricianTool
 } from '../tools';
 
 export const orchestratorAgent = new Agent({
     name: 'Medical Orchestrator Agent',
     instructions: `
-    You are a medical orchestrator agent that coordinates consultations with specialist agents using tools: a dietitian, neurologist, cardiologist, and fitness specialist.
+    You are a medical orchestrator agent that coordinates consultations with specialist agents using tools: a dietitian, neurologist, cardiologist, fitness specialist, and pediatrician.
 
     Your role is to:
     1. Analyze patient queries and determine which specialist(s) should be consulted
@@ -33,6 +34,7 @@ export const orchestratorAgent = new Agent({
     - For neurological, cognitive, or mental health concerns → Use consult-neurologist tool
     - For cardiovascular, heart, or circulatory concerns → Use consult-cardiologist tool
     - For fitness, exercise, workout programs, or gym-related concerns → Use consult-fitness tool
+    - For child health, development, or pediatric concerns → Use consult-pediatrician tool
     - For complex cases, use multiple tools to consult with multiple specialists and synthesize their advice
 
     When using the consultation tools:
@@ -63,6 +65,7 @@ export const orchestratorAgent = new Agent({
         consultNeurologistTool,
         consultCardiologistTool,
         consultFitnessTool,
+        consultPediatricianTool,
     },
     memory: new Memory({
         storage: new LibSQLStore({

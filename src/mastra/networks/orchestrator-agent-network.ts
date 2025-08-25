@@ -4,11 +4,12 @@ import { dietitianAgent } from '../agents/dietitian-agent';
 import { neurologistAgent } from '../agents/neurologist-agent';
 import { cardiologistAgent } from '../agents/cardiologist-agent';
 import { fitnessAgent } from '../agents/fitness-agent';
+import { pediatricianAgent } from '../agents/pediatrician-agent';
 
 export const orchestratorAgent = new AgentNetwork({
   name: 'Medical Orchestrator Agent',
   instructions: `
-    You are a medical orchestrator agent that coordinates consultations with specialist agents: a dietitian, neurologist, cardiologist, and fitness specialist.
+    You are a medical orchestrator agent that coordinates consultations with specialist agents: a dietitian, neurologist, cardiologist, fitness specialist, and pediatrician.
 
     Your role is to:
     1. Analyze patient queries and determine which specialist(s) should be consulted
@@ -29,6 +30,7 @@ export const orchestratorAgent = new AgentNetwork({
     - For neurological, cognitive, or mental health concerns → Use consult-neurologist tool
     - For cardiovascular, heart, or circulatory concerns → Use consult-cardiologist tool
     - For fitness, exercise, workout programs, or gym-related concerns → Use consult-fitness tool
+    - For child health, development, or pediatric concerns → Use consult-pediatrician tool
     - For complex cases, use multiple tools to consult with multiple specialists and synthesize their advice
 
     When using the consultation tools:
@@ -58,5 +60,6 @@ export const orchestratorAgent = new AgentNetwork({
     neurologistAgent,
     cardiologistAgent,
     fitnessAgent,
+    pediatricianAgent,
   ],
 });

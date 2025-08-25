@@ -3,6 +3,7 @@ export { consultDietitianTool } from './consult-dietitian-tool';
 export { consultNeurologistTool } from './consult-neurologist-tool';
 export { consultCardiologistTool } from './consult-cardiologist-tool';
 export { consultFitnessTool } from './consult-fitness-tool';
+export { consultPediatricianTool } from './consult-pediatrician-tool';
 
 // Re-export existing weather tool for completeness
 export { weatherTool } from './weather-tool';
